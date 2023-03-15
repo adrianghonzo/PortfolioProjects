@@ -1,12 +1,13 @@
+-- (2020-2021) COVID DATA EXPLORATION
 
 Select *
 From PortfolioProject..CovidDeaths$
 Where continent is not null
 Order by 3, 4
 
---Select *
---From PortfolioProject..CovidVaccinations$
---Order by 3, 4
+Select *
+From PortfolioProject..CovidVaccinations$
+Order by 3, 4
 
 -- Select Data that we are going to be using
 
@@ -140,7 +141,6 @@ Create View PercentPopulationVaccinated as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int, vac.new_vaccinations)) OVER (Partition by dea.location Order by dea.location,
  dea.date) as RollingPeopleVaccinated
---, RollingPeopleVaccinated
 From PortfolioProject..CovidDeaths$ dea
 Join PortfolioProject..CovidVaccinations$ vac
 	On dea.location = vac.location
@@ -150,3 +150,4 @@ Where dea.continent is not null
 
 Select *
 From PercentPopulationVaccinated
+
