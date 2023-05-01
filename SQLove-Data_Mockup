@@ -1,0 +1,64 @@
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+user TEXT,
+age INTEGER);
+
+INSERT INTO users VALUES
+(1, "Adrian", 23),
+(2, "Billy", 27),
+(3, "Kim", 25),
+(4, "Ashley", 20),
+(5, "Jimmy", 33),
+(6, "Ramona", 24);
+
+CREATE TABLE status (
+id INTEGER PRIMARY KEY,
+points INTEGER,
+relationship_status TEXT);
+
+INSERT INTO status VALUES
+(1, 200, "Single"),
+(2, 100, "Married"),
+(3, 250, "Single"),
+(4, 500, "Single"),
+(5, 750, "Single"),
+(6, 300, "Married");
+
+CREATE TABLE bio (
+id INTEGER PRIMARY KEY,
+food TEXT,
+color TEXT,
+song TEXT);
+
+INSERT INTO bio VALUES
+(1, "Taco", "Orange", "Float On"),
+(2, "Pizza", "Blue", "My Name is Jonas"),
+(3, "Raw men", "Purple", "Blank Space"),
+(4, "Lasagna", "Green", "Como La Flor"),
+(5, "Fried Chicken", "Yellow", "Jerk it out"),
+(6, "Sushi", "Red", "Today");
+
+SELECT a.user, a.age, b.points, b.relationship_status, c.food, c.color, c.song
+FROM users a
+JOIN status b
+    ON a.id = b.id
+JOIN bio c
+    ON a.id = c.id;
+    
+UPDATE bio
+SET food = "Ramen"
+WHERE food = "Raw men";
+
+DELETE
+FROM status
+WHERE relationship_status = "Married";
+
+    
+SELECT users.user, users.age, status.relationship_status, 
+bio.food, bio.color
+FROM users
+JOIN status
+    ON users.id = status.id
+JOIN bio
+    ON users.id = bio.id;
+
