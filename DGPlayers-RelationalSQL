@@ -1,0 +1,44 @@
+CREATE TABLE famous (id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+state TEXT,
+age NUMERIC);
+
+INSERT INTO famous VALUES
+(1, "Paul McBeth", "California", 32),
+(2, "Nate Sexton", "Oregon", 38),
+(3, "Ricky Wysocki", "Ohio", 29),
+(4, "Calvin Heimburg", "Florida", 28);
+
+CREATE TABLE sponsors (id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+sport TEXT);
+
+INSERT INTO sponsors VALUES
+(1, "Innova", "Disc Golf"),
+(2, "Redbull", "Food"),
+(3, "Trash Panda", "Disc Golf"),
+(4, "Nike", "Clothing"),
+(5, "Adidas", "Clothing"),
+(6, "Dynamic Discs", "Disc Golf"),
+(7, "Discmania", "Disc Golf");
+
+CREATE TABLE nickname (id INTEGER PRIMARY KEY AUTOINCREMENT,
+nick TEXT,
+signature TEXT);
+
+INSERT INTO nickname VALUES
+(1, "Vinny", "Put the pizza in the oven."),
+(2, "Sexy", "Grandpa Putt"),
+(3, "Sockibomb", "Raptor Legs"),
+(4, "McBeast", "Blackout");
+
+CREATE TABLE player_overview (
+player_id NUMERIC,
+sponsor_id NUMERIC,
+nickname_id NUMERIC);
+
+SELECT famous.name, famous.age, sponsors.name sponsor
+FROM famous
+    JOIN sponsors
+    ON;
+
