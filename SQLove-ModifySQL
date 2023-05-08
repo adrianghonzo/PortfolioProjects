@@ -33,7 +33,7 @@ song TEXT);
 INSERT INTO bio VALUES
 (1, "Taco", "Orange", "Float On"),
 (2, "Pizza", "Blue", "My Name is Jonas"),
-(3, "Raw men", "Purple", "Blank Space"),
+(3, "Ramin", "Purple", "Blank Space"),
 (4, "Lasagna", "Green", "Como La Flor"),
 (5, "Fried Chicken", "Yellow", "Jerk it out"),
 (6, "Sushi", "Red", "Today");
@@ -47,7 +47,7 @@ JOIN bio c
     
 UPDATE bio
 SET food = "Ramen"
-WHERE food = "Raw men";
+WHERE food = "Ramin";
 
 DELETE
 FROM status
