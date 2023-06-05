@@ -1,6 +1,4 @@
-#In this project our goal is to collect and store data from a amzn store page
-
-#import libraries
+# import libraries
 
 from bs4 import BeautifulSoup
 import requests
@@ -21,14 +19,14 @@ with open('AmznMako3ScraperDataset.csv', 'w', newline='', encoding='UTF8') as f:
     writer.writerow(header)
     writer.writerow(data)
 
-#Append the data to the csv
+# Append the data to the csv
 
 with open('AmznMako3ScraperDataset.csv', 'a+', newline='', encoding='UTF8') as f:
     writer = csv.writer(f)
     writer.writerow(data)
 
 
-# Create a function to pull data from amzn store page
+# Function 'check_price' pulls data from product on amzn store page
 
 def check_price():
     URL = "https://www.amazon.com/Innova-Disc-Golf-Champion-170-174gm/dp/B00G2BXCP6/ref=sr_1_12?crid=2IGPL4LZ0J4EG&keywords=disc%2Bgolf&qid=1682972066&sprefix=disc%2520golf%2Caps%2C103&sr=8-12&th=1&psc=1"
